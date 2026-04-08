@@ -1,16 +1,44 @@
-# React + Vite
+# FairAI Inspector · Prototype_1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FairAI Inspector is a demo project designed to **detect bias in AI datasets**.  
+This repository contains the **Prototype_1** implementation, showcasing the core functionality and workflow.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Prototype
+You can explore the working prototype here:  
+👉 [FairAI Inspector – Live Demo](https://fair-ai-detection.web.app)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 Project Structure
+- `prototype_1/` – Source code for the prototype
+- `.gitignore` – Ignored files and directories
+- `README.md` – Project documentation
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+- Upload datasets for analysis
+- Detect potential bias in AI training data
+- Visualize results with clear dashboards
+- Built with modern web technologies
+
+---
+
+## 🛠 Tech Stack
+- **Frontend:** React + Vite  
+- **Backend:** Firebase / Node.js  
+- **Deployment:** Firebase Hosting
+
+---
+
+## 📌 Getting Started
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/drana25/fairai-inspector.git
+cd prototype_1
+npm install
+npm run dev
+
