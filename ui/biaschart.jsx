@@ -37,7 +37,7 @@ function CustomTooltip({ active, payload, label }) {
   );
 }
 
-export default function BiasChart({ groups, columnName }) {
+export default function FuturisticBiasChart({ groups, columnName }) {
   const data = groups.map((g) => ({
     name: g.name,
     rate: g.rate,

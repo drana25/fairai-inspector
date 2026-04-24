@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function FairnessRing({ score, size = 220 }) {
+export default function FuturisticFairnessRing({ score, size = 220 }) {
   const [animatedScore, setAnimatedScore] = useState(0);
   const strokeWidth = 14;
   const radius = (size - strokeWidth) / 2;
