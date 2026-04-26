@@ -14,7 +14,7 @@ replicate discrimination at scale. FairAI Inspector detects this
 bias in seconds — free, private, and explainable.
 
 ## Live Demo
-[FairAI Inspector — Live Demo](https://fair-ai-detection.web.app)
+[FairAI Inspector — Live Demo](https://fair-ai-detection.web.app/)
 Click "Try Demo" — no account required.
 
 ## How It Works
