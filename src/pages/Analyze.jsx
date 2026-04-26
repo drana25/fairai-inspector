@@ -62,9 +62,9 @@ export default function Analyze({ user }) {
     reader.readAsText(f);
   }, []);
 
-  const { getRootProps, getInputProps } = useDropzone({
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: { 'text/csv': ['.csv'] },
+    accept: { 'text/csv': ['.csv'], 'application/vnd.ms-excel': ['.csv'], 'text/plain': ['.csv'] },
     maxFiles: 1,
   });
 
@@ -172,27 +172,38 @@ export default function Analyze({ user }) {
         {/* UPLOAD BOX */}
         <div
           {...getRootProps()}
-          className="border-2 border-dashed border-white/10 rounded-2xl p-10 text-center cursor-pointer backdrop-blur-xl bg-white/5 hover:bg-white/10 transition"
+          className={`border-2 border-dashed rounded-2xl p-10 text-center cursor-pointer backdrop-blur-xl transition-all duration-300 ${
+            isDragActive
+              ? 'border-indigo-500 bg-indigo-600/5 shadow-lg shadow-indigo-500/10'
+              : file
+              ? 'border-green-500/30 bg-green-600/5'
+              : 'border-white/10 bg-white/5 hover:bg-white/10 hover:border-indigo-500/50'
+          }`}
         >
           <input {...getInputProps()} />
 
           {!file ? (
             <>
-              <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
+              <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 2 }} className="text-5xl mb-3">
                 📂
               </motion.div>
-              <p>Drag & drop CSV here</p>
+              <p className="text-white font-medium mb-1">
+                {isDragActive ? 'Drop your CSV here...' : 'Drag & drop your CSV here'}
+              </p>
+              <p className="text-gray-500 text-sm mb-4">or click anywhere to browse</p>
               <button
-                onClick={handleSampleData}
-                className="mt-3 text-indigo-400 underline"
+                onClick={(e) => { e.stopPropagation(); handleSampleData(); }}
+                className="mt-1 px-4 py-2 bg-indigo-600/20 border border-indigo-500/30 text-indigo-400 rounded-xl text-sm hover:bg-indigo-600/30 transition-colors"
               >
-                Try sample
+                🧪 Try with sample data instead
               </button>
             </>
           ) : (
             <>
-              <p className="text-green-400">✅ {file.name}</p>
-              <p className="text-sm text-gray-400">{rowCount} rows</p>
+              <div className="text-5xl mb-3">✅</div>
+              <p className="text-green-400 font-bold">{file.name}</p>
+              <p className="text-sm text-gray-400 mt-1">{rowCount} rows detected</p>
+              <p className="text-xs text-gray-500 mt-2">Drop another file to replace</p>
             </>
           )}
         </div>

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { setDemoMode } from '../data/demoData';
@@ -5,6 +6,12 @@ import toast from 'react-hot-toast';
 
 export default function Landing({ user }) {
   const navigate = useNavigate();
+
+  // Clear demo mode when landing page is visited so returning visitors
+  // always see the home page, not the dashboard
+  useEffect(() => {
+    localStorage.removeItem('fairai_demo');
+  }, []);
 
   const handleDemoMode = () => {
     localStorage.setItem('fairai_demo', 'true');
