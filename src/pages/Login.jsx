@@ -28,7 +28,7 @@ export default function Login({ user }) {
   };
 
   const handleDemoMode = () => {
-    localStorage.setItem('fairai_demo', 'true');
+    sessionStorage.setItem('fairai_demo', 'true');
     setDemoMode();
     toast.success('Demo mode activated!');
     navigate('/dashboard');

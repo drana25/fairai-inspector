@@ -220,13 +220,13 @@ Ivan Reynolds,Male,White,25-34,5,Bachelor,1
 Nina Ellis,Female,Hispanic,35-44,5,Bachelor,0`;
 
 export function isDemoMode() {
-  return localStorage.getItem('fairai_demo') === 'true';
+  return sessionStorage.getItem('fairai_demo') === 'true';
 }
 
 export function setDemoMode() {
-  localStorage.setItem('fairai_demo', 'true');
+  sessionStorage.setItem('fairai_demo', 'true');
 }
 
 export function clearDemoMode() {
-  localStorage.removeItem('fairai_demo');
+  sessionStorage.removeItem('fairai_demo');
 }

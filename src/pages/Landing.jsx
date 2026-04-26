@@ -10,11 +10,11 @@ export default function Landing({ user }) {
   // Clear demo mode when landing page is visited so returning visitors
   // always see the home page, not the dashboard
   useEffect(() => {
-    localStorage.removeItem('fairai_demo');
+    sessionStorage.removeItem('fairai_demo');
   }, []);
 
   const handleDemoMode = () => {
-    localStorage.setItem('fairai_demo', 'true');
+    sessionStorage.setItem('fairai_demo', 'true');
     setDemoMode();
     toast.success('Demo mode activated!');
     navigate('/dashboard');
