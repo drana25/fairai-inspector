@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 import { auth } from './services/firebase';
 import ProtectedRoute from './components/ProtectedRoute';
+import Landing from './pages/Landing';
 import Login from './pages/Login';
 import Analyze from './pages/Analyze';
 import Report from './pages/Report';
@@ -44,7 +45,8 @@ export default function App() {
       />
       <AnimatePresence mode="wait">
         <Routes>
-          <Route path="/" element={<Login user={user} />} />
+          <Route path="/" element={<Landing user={user} />} />
+          <Route path="/login" element={<Login user={user} />} />
           <Route
             path="/dashboard"
             element={

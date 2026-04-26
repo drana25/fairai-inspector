@@ -26,19 +26,10 @@ export default function Report() {
     <div className="min-h-screen text-white bg-gradient-to-br from-[#0a0a0f] via-[#111827] to-[#0a0a0f]">
 
       {/* HEADER */}
-      <div className="p-4 flex justify-between items-center border-b border-white/10 backdrop-blur-lg sticky top-0 bg-[#0a0a0f]/80 z-50">
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => navigate(-1)}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 text-gray-400 hover:text-white text-sm transition-all"
-          >
-            <span className="text-base leading-none">←</span>
-            <span className="hidden sm:inline">Back</span>
-          </button>
-          <h1 className="font-bold text-lg">⚖️ FairAI</h1>
-        </div>
-        <button onClick={() => navigate("/analyze")} className="text-sm text-gray-400 hover:text-white transition-colors">
-          Analyze again →
+      <div className="p-6 flex justify-between items-center border-b border-white/10 backdrop-blur-lg">
+        <h1 className="font-bold text-lg">⚖️ FairAI</h1>
+        <button onClick={() => navigate("/analyze")} className="text-sm text-gray-400 hover:text-white">
+          ← Analyze again
         </button>
       </div>
 
