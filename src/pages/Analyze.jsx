@@ -37,12 +37,21 @@ export default function Analyze({ user }) {
     return () => clearInterval(interval);
   }, [analyzing]);
 
-  const onDrop = useCallback((acceptedFiles) => {
+  const onDrop = useCallback((acceptedFiles, fileRejections) => {
+    // Handle rejections (e.g. too many files)
+    if (fileRejections.length > 0) {
+      toast.error('Please upload only one CSV file at a time.');
+      return;
+    }
+
     const f = acceptedFiles[0];
     if (!f) return;
 
-    if (!f.name.toLowerCase().endsWith('.csv')) {
-      toast.error('Upload CSV only');
+    // Check extension manually regardless of MIME type
+    const isCSV = f.name.toLowerCase().endsWith('.csv') || f.type === 'text/csv' || f.type === 'application/vnd.ms-excel';
+    
+    if (!isCSV) {
+      toast.error('The selected file is not a CSV. Please upload a .csv file.');
       return;
     }
 
@@ -77,7 +86,6 @@ export default function Analyze({ user }) {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: { 'text/csv': ['.csv'], 'application/vnd.ms-excel': ['.csv'], 'text/plain': ['.csv'] },
     maxFiles: 1,
   });
 
