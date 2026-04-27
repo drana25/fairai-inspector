@@ -18,7 +18,7 @@ bias in seconds — free, private, and explainable.
 Click "Try Demo" — no account required.
 
 ## Demo Video
-[Watch 3-minute demo](YOUR_YOUTUBE_URL_HERE)
+[Watch 3-minute demo](https://youtu.be/OdVXxXGuLj0?si=twF1C6Vh3_BRBy70)
 
 ## Problem Statement
 Automated AI systems increasingly make decisions about hiring, 
