@@ -41,23 +41,36 @@ export default function Analyze({ user }) {
     const f = acceptedFiles[0];
     if (!f) return;
 
-    if (!f.name.endsWith('.csv')) {
+    if (!f.name.toLowerCase().endsWith('.csv')) {
       toast.error('Upload CSV only');
       return;
     }
 
     const reader = new FileReader();
     reader.onload = (e) => {
-      const text = e.target.result;
-      setCsvText(text);
-      setFile(f);
-      setCurrentStep(1);
+      try {
+        const text = e.target.result;
+        if (!text || text.trim().length === 0) {
+          toast.error("The file is empty.");
+          return;
+        }
 
-      const detected = detectColumns(text);
-      setDetectedColumns(detected);
-      setRowCount(text.split('\n').length - 1);
-
-      toast.success(`Loaded ${f.name}`);
+        setCsvText(text);
+        setFile(f);
+        
+        const detected = detectColumns(text);
+        if (!detected.protectedColumns || detected.protectedColumns.length === 0) {
+          console.warn("No protected columns auto-detected");
+        }
+        
+        setDetectedColumns(detected);
+        setRowCount(text.split('\n').length - 1);
+        setCurrentStep(1);
+        toast.success(`Loaded ${f.name}`);
+      } catch (err) {
+        console.error("Error reading CSV:", err);
+        toast.error("Failed to parse CSV file.");
+      }
     };
     reader.readAsText(f);
   }, []);
@@ -95,6 +108,12 @@ export default function Analyze({ user }) {
         detectedColumns.protectedColumns,
         detectedColumns.targetColumn
       );
+
+      if (!result.columns || Object.keys(result.columns).length === 0) {
+        toast.error("No demographic columns (Gender, Race, Age, etc.) found in this CSV to analyze.");
+        setAnalyzing(false);
+        return;
+      }
 
       const explanations = {};
       for (const [col, metrics] of Object.entries(result.columns)) {

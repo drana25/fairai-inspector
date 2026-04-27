@@ -327,7 +327,7 @@ export default function Landing({ user }) {
           </div>
         </section>
         {/* Google Solution Challenge Section */}
-        <section className="py-32 px-6 relative bg-gradient-to-b from-[#1e1b4b] to-[#0a0a0f]">
+        <section id="mission" className="py-32 px-6 relative bg-gradient-to-b from-[#1e1b4b] to-[#0a0a0f]">
           <div className="max-w-7xl mx-auto">
             <div className="mb-20 text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
