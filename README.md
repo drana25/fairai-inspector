@@ -17,6 +17,37 @@ bias in seconds — free, private, and explainable.
 [FairAI Inspector — Live Demo](https://fair-ai-detection.web.app/)
 Click "Try Demo" — no account required.
 
+## Demo Video
+[Watch 3-minute demo](YOUR_YOUTUBE_URL_HERE)
+
+## Problem Statement
+Automated AI systems increasingly make decisions about hiring, 
+lending, and healthcare. When trained on biased historical data, 
+these systems replicate discrimination at scale. A single biased 
+hiring model can affect thousands of candidates. Manual bias audits 
+require data science expertise and take 4-8 hours. Most organisations 
+have never audited their AI tools for fairness.
+
+## Our Solution
+FairAI Inspector lets any HR manager, data scientist, or compliance 
+officer upload a CSV dataset and receive a full fairness audit in 
+under 15 seconds — with plain-English explanations powered by 
+Google Gemini.
+
+## Impact
+- Targets: UN SDG 10 (Target 10.3) and SDG 16 (Target 16.6)
+- Detects bias using the Disparate Impact Ratio — the same legal 
+  standard used by the US EEOC (Equal Employment Opportunity Commission)
+- 100% private: raw data processed in-browser, never sent to servers
+- Zero setup: works in any browser, no installation needed
+
+## Technical Challenge We Solved
+Gemini API free tier quota gets exhausted during heavy testing. 
+We solved this by implementing a local explanation engine that 
+generates plain-English bias explanations directly from statistical 
+results in the browser — so the app always works regardless of 
+API availability.
+
 ## How It Works
 1. Upload or paste a CSV dataset
 2. AI analyses demographic fairness across protected columns
