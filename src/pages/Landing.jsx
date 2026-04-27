@@ -373,18 +373,24 @@ export default function Landing({ user }) {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-[#161622] rounded-3xl p-8 border border-white/5 hover:-translate-y-2 transition-transform duration-300 text-center flex flex-col items-center">
-                 <div className="w-20 h-20 bg-indigo-500 rounded-full flex items-center justify-center text-3xl font-bold text-white mb-6 ring-4 ring-indigo-500/20">D</div>
+                 <div className="w-20 h-20 rounded-full border border-indigo-500/20 mb-6 ring-4 ring-indigo-500/20 overflow-hidden">
+                   <img src="/team/devanshi.jpg" alt="Devanshi Rana" className="w-full h-full object-cover" />
+                 </div>
                  <h3 className="text-white font-bold text-xl mb-2">Devanshi Rana</h3>
                  <p className="text-indigo-400 text-sm font-medium mb-1">Team Lead & Full Stack Developer</p>
               </div>
               <div className="bg-[#161622] rounded-3xl p-8 border border-white/5 hover:-translate-y-2 transition-transform duration-300 text-center flex flex-col items-center">
-                 <div className="w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center text-3xl font-bold text-white mb-6 ring-4 ring-purple-500/20">H</div>
+                 <div className="w-20 h-20 rounded-full border border-purple-500/20 mb-6 ring-4 ring-purple-500/20 overflow-hidden">
+                   <img src="/team/hetvi.png" alt="Hetvi Rathod" className="w-full h-full object-cover" />
+                 </div>
                  <h3 className="text-white font-bold text-xl mb-2">Hetvi Rathod</h3>
                  <p className="text-purple-400 text-sm font-medium mb-1">UI/UX Designer</p>
                  <p className="text-gray-500 text-xs">Frontend</p>
               </div>
               <div className="bg-[#161622] rounded-3xl p-8 border border-white/5 hover:-translate-y-2 transition-transform duration-300 text-center flex flex-col items-center">
-                 <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center text-3xl font-bold text-white mb-6 ring-4 ring-blue-500/20">M</div>
+                 <div className="w-20 h-20 rounded-full border border-blue-500/20 mb-6 ring-4 ring-blue-500/20 overflow-hidden">
+                   <img src="/team/mayank.png" alt="Mayank Arambhi" className="w-full h-full object-cover" />
+                 </div>
                  <h3 className="text-white font-bold text-xl mb-2">Mayank Arambhi</h3>
                  <p className="text-blue-400 text-sm font-medium mb-1">Backend</p>
                  <p className="text-gray-500 text-xs">AI Integration</p>
